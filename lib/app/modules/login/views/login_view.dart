@@ -1,112 +1,118 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:capstone/theme/color.dart';
 import '../../../routes/app_pages.dart';
 import '../controllers/login_controller.dart';
 
-void main() => runApp(const LoginView());
- 
-class LoginView extends StatelessWidget {
-  const LoginView({Key? key}) : super(key: key);
- 
-  static const String _title = 'Fitness';
- 
+class LoginView extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: _title,
-      home: Scaffold(
-        appBar: AppBar(title: const Text(_title)),
-        body: const MyStatefulWidget(),
+    final mediaQueryHeight = MediaQuery.of(context).size.height;
+    final mediaQueryWidth = MediaQuery.of(context).size.width;
+    final bodyHeight = mediaQueryHeight - MediaQuery.of(context).padding.top;
+    return Scaffold(
+      backgroundColor: bgColor,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(16),
+          child: Column(
+            children: [
+              Container(
+                height: bodyHeight * 0.3,
+                width: mediaQueryWidth * 0.5,
+                child: Image.asset('assets/image/login_logo.png'),
+              ),
+              Text(
+                'Gass Count',
+                style: TextStyle(
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                    color: primaryColor),
+              ),
+              SizedBox(
+                height: 30.0,
+              ),
+              Container(
+                height: bodyHeight * 0.7,
+                width: mediaQueryWidth,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          'Hai, ',
+                          style: TextStyle(
+                              fontSize: 24,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          ' Selamat Datang',
+                          style: TextStyle(
+                              fontSize: 24,
+                              color: primaryColor,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                    Text(
+                      'Masukan akunmu terlebih dahulu ya...',
+                      style: TextStyle(fontSize: 14, color: Colors.grey),
+                    ),
+                    SizedBox(
+                      height: 20.0,
+                    ),
+                    TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        labelText: 'Email',
+                        hintText: 'Masukan Email',
+                        prefixIcon: Icon(Icons.email),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15.0,
+                    ),
+                    TextField(
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        labelText: 'Password',
+                        hintText: 'Masukan Password',
+                        prefixIcon: Icon(Icons.lock_rounded),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15.0,
+                    ),
+                    SizedBox(
+                      height: 45,
+                      child: ElevatedButton(
+                        onPressed: () => Get.toNamed(Routes.DASHBOARD),
+                        child: Text(
+                          'Masuk',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: primaryColor,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
-  }
-}
- 
-class MyStatefulWidget extends StatefulWidget {
-  const MyStatefulWidget({Key? key}) : super(key: key);
- 
-  @override
-  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
-}
- 
-class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  TextEditingController nameController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
- 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-        padding: const EdgeInsets.all(10),
-        child: ListView(
-          children: <Widget>[
-            Container(
-                alignment: Alignment.center,
-                padding: const EdgeInsets.all(10),
-                child: const Text(
-                  'Login Page',
-                  style: TextStyle(
-                      color: Colors.blue,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 30),
-                )),
-            Container(
-                alignment: Alignment.center,
-                padding: const EdgeInsets.all(10),
-                child: const Text(
-                  'Sign in',
-                  style: TextStyle(fontSize: 20),
-                )),
-            Container(
-              padding: const EdgeInsets.all(10),
-              child: TextField(
-                controller: nameController,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'User Name',
-                ),
-              ),
-            ),
-            Container(
-              padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-              child: TextField(
-                obscureText: true,
-                controller: passwordController,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Password',
-                ),
-              ),
-            ),
-            TextButton(
-              onPressed: () {
-                //forgot password screen
-              },
-              child: const Text('Forgot Password',),
-            ),
-            Container(
-                height: 50,
-                padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                child: ElevatedButton(
-                  child: const Text('Login'),
-                  onPressed: () => Get.toNamed(Routes.DASHBOARD),
-                )
-            ),
-            Row(
-              children: <Widget>[
-                const Text('Does not have account?'),
-                TextButton(
-                  child: const Text(
-                    'Sign in',
-                    style: TextStyle(fontSize: 20),
-                  ),
-                  onPressed: () {
-                    //signup screen
-                  },
-                )
-              ],
-              mainAxisAlignment: MainAxisAlignment.center,
-            ),
-          ],
-        ));
   }
 }

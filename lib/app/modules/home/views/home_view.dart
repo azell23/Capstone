@@ -8,10 +8,10 @@ class HomeView extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           "Home page",
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: Colors.white),
         ),
         elevation: 0,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.blue,
       ),
       body: Container(
         child: Center(
