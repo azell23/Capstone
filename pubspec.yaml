@@ -7,9 +7,13 @@ environment:
 
 dependencies: 
   cupertino_icons: ^1.0.2
+  fade_shimmer: ^2.2.0
+  flutter_expandable_fab: ^1.7.1
+  persistent_header_adaptive: ^2.0.0
   get: 4.6.5
   flutter: 
     sdk: flutter
+  google_fonts: ^2.0.0  
 
 dev_dependencies: 
   flutter_lints: ^2.0.0
