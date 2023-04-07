@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:capstone/theme/color.dart';
 import '../../../routes/app_pages.dart';
-import '../controllers/login_controller.dart';
+import '../controllers/register_controller.dart';
 
-class LoginView extends GetView<LoginController> {
+class RegisterView extends GetView<RegisterController> {
   @override
   Widget build(BuildContext context) {
     final mediaQueryHeight = MediaQuery.of(context).size.height;
@@ -34,7 +34,7 @@ class LoginView extends GetView<LoginController> {
                     Row(
                       children: [
                         Text(
-                          'Welcome',
+                          'Let\'s Join Us! ',
                           style: TextStyle(
                               fontSize: 24,
                               color: primaryColor,
@@ -46,11 +46,58 @@ class LoginView extends GetView<LoginController> {
                       height: 5,
                     ),
                     Text(
-                      'Let’s achieve your fitness goals together with us!',
+                      'take the first step towards a healthier',
                       style: TextStyle(fontSize: 14, color: Colors.grey),
                     ),
                     SizedBox(
-                      height: 20.0,
+                      height: 20,
+                    ),
+                    TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            width: 2,
+                            color: Colors.black45,
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            width: 2,
+                            color: Colors.black45,
+                          ),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            width: 2,
+                            color: Colors.black45,
+                          ),
+                        ),
+                        hintText: "Input your username",
+                        labelText: "Username",
+                        labelStyle: TextStyle(
+                          fontSize: 16,
+                          color: Colors.black45,
+                        ),
+                        floatingLabelBehavior: FloatingLabelBehavior.always,
+                        prefixIcon: Container(
+                          margin: const EdgeInsets.all(16),
+                          padding: const EdgeInsets.only(right: 12),
+                          decoration: BoxDecoration(
+                            border: Border(
+                              right: BorderSide(
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                          child: Icon(
+                            Icons.person,
+                            color: Colors.black45,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15,
                     ),
                     TextField(
                       decoration: InputDecoration(
@@ -97,7 +144,7 @@ class LoginView extends GetView<LoginController> {
                       ),
                     ),
                     SizedBox(
-                      height: 15.0,
+                      height: 15,
                     ),
                     TextField(
                       decoration: InputDecoration(
@@ -144,26 +191,6 @@ class LoginView extends GetView<LoginController> {
                       ),
                     ),
                     SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            print('forget tapped');
-                          },
-                          child: Text(
-                            'Forget Password ?',
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: primaryColor,
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                    SizedBox(
                       height: 20,
                     ),
                     SizedBox(
@@ -171,7 +198,7 @@ class LoginView extends GetView<LoginController> {
                       child: ElevatedButton(
                         onPressed: () => Get.toNamed(Routes.DASHBOARD),
                         child: Text(
-                          'Sign In',
+                          'Sign Up',
                           style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                         style: ElevatedButton.styleFrom(
@@ -241,7 +268,7 @@ class LoginView extends GetView<LoginController> {
                       child: ElevatedButton(
                         onPressed: () => Get.toNamed(Routes.DASHBOARD),
                         child: Text(
-                          'Sign In With Google',
+                          'Sign Up With Google',
                           style: TextStyle(
                               fontWeight: FontWeight.bold, color: Colors.white),
                         ),
@@ -260,7 +287,7 @@ class LoginView extends GetView<LoginController> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Don\'t have a account? ',
+                          'Already have an account? ',
                           style: TextStyle(
                             fontSize: 14,
                             color: primaryColor,
@@ -268,10 +295,10 @@ class LoginView extends GetView<LoginController> {
                         ),
                         GestureDetector(
                           onTap: () {
-                            Get.offAllNamed(Routes.REGISTER);
+                            Get.offAllNamed(Routes.LOGIN);
                           },
                           child: Text(
-                            'Sign Up',
+                            'Sign In',
                             style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,

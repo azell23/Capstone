@@ -34,7 +34,7 @@ class DashboardView extends StatelessWidget {
             elevation: 0,
             items: [
               _bottomNavigationBarItem(
-                icon: CupertinoIcons.home,
+                icon: Icons.home,
                 label: 'Home',
               ),
               _bottomNavigationBarItem(
@@ -42,7 +42,7 @@ class DashboardView extends StatelessWidget {
                 label: 'Food',
               ),
               _bottomNavigationBarItem(
-                icon: CupertinoIcons.person_crop_circle,
+                icon: Icons.person,
                 label: 'Profile',
               ),
             ],
