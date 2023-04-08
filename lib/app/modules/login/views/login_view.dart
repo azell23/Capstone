@@ -187,16 +187,13 @@ class LoginView extends GetView<LoginController> {
                     SizedBox(
                       height: 10,
                     ),
-                    Container(
-                      // margin: EdgeInsets.fromLTRB(32, 0, 32.5, 30),
-                      // padding: EdgeInsets.fromLTRB(29, 0, 29, 0),
-                      // width: double.infinity,
+                    Center(
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.max,
                         children: [
                           Container(
-                            // line1eDn (21:808)
-
                             width: 70,
                             height: 1,
                             decoration: BoxDecoration(
@@ -207,7 +204,6 @@ class LoginView extends GetView<LoginController> {
                             width: 10,
                           ),
                           Center(
-                            // orY4G (21:810)
                             child: Text(
                               'Or',
                               textAlign: TextAlign.center,
@@ -224,7 +220,6 @@ class LoginView extends GetView<LoginController> {
                             width: 10,
                           ),
                           Container(
-                            // line2ed6 (21:809)
                             margin: EdgeInsets.fromLTRB(0, 1, 0, 0),
                             width: 70,
                             height: 1,

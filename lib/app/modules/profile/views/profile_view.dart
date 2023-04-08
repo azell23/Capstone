@@ -13,62 +13,153 @@ class ProfileView extends GetView<ProfileController> {
   Widget build(BuildContext context) {
     var isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
     return Scaffold(
-
       appBar: AppBar(
         title: Text(tProfile),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-          child: Container(
-        padding: const EdgeInsets.all(12),
-        child: Column(children: [
-          SizedBox(
-            width: 120,
-            height: 120,
-            child: ClipRRect(
-                borderRadius: BorderRadius.circular(200),
-                child: Image.asset("assets/images/man.jpg")),
-          ),
-          const SizedBox( height: 10),
-          Text(tProfileUsername, style: Theme.of(context).textTheme.headlineMedium),
-          Text(tEmail, style: Theme.of(context).textTheme.bodyMedium),
-          const SizedBox(height: 20),
-          SizedBox(
-            width: 200,
-            child: ElevatedButton(
-              onPressed: ( ) {},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: bgSplash, side: BorderSide.none, shape: const StadiumBorder()),
-              child: const Text(tEditProfile, style: TextStyle(color: Colors.black),),
-            ),
-          ),
-          const SizedBox( height: 30),
-          const Divider(),
-          const SizedBox(height: 10),
-
-          ListTile(
-            leading: Container(
-              width: 30,
-              height: 30,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(100),
-                color: bgColor.withOpacity(0.1),
-              ),
-              child: const Icon(LineAwesomeIcons.alternate_sign_out, color: Colors.grey),
-              ),
-              title: Text(tLogout, style: Theme.of(context).textTheme.bodySmall,),
-              trailing: Container(
-                width: 30,
-                height: 30,
+        child: Column(
+          children: [
+            Container(
+                height: 200,
+                width: double.infinity,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(100),
-                  color: Colors.grey.withOpacity(0.1),
+                  color: primaryColor,
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(55),
+                    bottomRight: Radius.circular(55),
+                  ),
                 ),
-                child: const Icon(LineAwesomeIcons.angle_right, size: 18,color: Colors.grey
-              ),
-          ),)
-        ]),
-      )),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CircleAvatar(
+                      radius: 40,
+                      backgroundImage: NetworkImage(
+                          'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      'John Doe',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                )),
+            SizedBox(
+              height: 50,
+            ),
+            Container(
+                padding: EdgeInsets.symmetric(horizontal: 30),
+                child: Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      decoration: BoxDecoration(
+                        color: isDark ? Colors.grey[900] : Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.1),
+                            spreadRadius: 5,
+                            blurRadius: 7,
+                            offset: Offset(0, 3),
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        children: [
+                          ListTile(
+                            leading: Icon(Icons.email),
+                            title: Text('John Doe @gmail.com'),
+                            subtitle: Text('Email address'),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      decoration: BoxDecoration(
+                        color: isDark ? Colors.grey[900] : Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.1),
+                            spreadRadius: 5,
+                            blurRadius: 7,
+                            offset: Offset(0, 3),
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        children: [
+                          ListTile(
+                            leading: Icon(Icons.phone),
+                            title: Text('+62 895 3227 28059'),
+                            subtitle: Text('Phone number'),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      decoration: BoxDecoration(
+                        color: isDark ? Colors.grey[900] : Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.1),
+                            spreadRadius: 5,
+                            blurRadius: 7,
+                            offset: Offset(0, 3),
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        children: [
+                          ListTile(
+                            leading: Icon(Icons.location_on),
+                            title: Text('AL-Poltek Harber Berkah Jaya'),
+                            subtitle: Text('Address'),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: Text('Edit Profile'),
+                      style: ElevatedButton.styleFrom(
+                        primary: primaryColor,
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 100, vertical: 15),
+                        textStyle: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                      ),
+                    ),
+                  ],
+                )),
+          ],
+        ),
+      ),
     );
   }
 }

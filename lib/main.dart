@@ -1,4 +1,3 @@
-import 'package:capstone/app/modules/splash/bindings/splash_binding.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -12,7 +11,6 @@ void main() {
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
       debugShowCheckedModeBanner: false,
-      initialBinding: SplashBinding(),
     ),
   );
 }

@@ -8,8 +8,11 @@ environment:
 dependencies:
   cupertino_icons: ^1.0.2
   fade_shimmer: ^2.2.0
+  smooth_page_indicator: ^1.0.1
   flutter_expandable_fab: ^1.7.1
   persistent_header_adaptive: ^2.0.0
+  flutter_native_splash: ^2.2.19
+  google_sign_in: ^6.1.0
   get: 4.6.5
   get_storage: ^2.0.3
   line_awesome_flutter: ^2.0.0
@@ -27,3 +30,19 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+
+flutter_native_splash:
+  color: "#E83C00"
+  image: assets/icons/ic_splash.png
+  # branding: assets/branding-development.png
+  color_dark: "#121212"
+  image_dark: assets/icons/ic_splash.png
+  # branding_dark: assets/branding-development.png
+
+  android_12:
+    image: assets/icons/ic_splash.png
+    icon_background_color: "#ffffff"
+    image_dark: assets/icons/ic_splash.png
+    icon_background_color_dark: "#121212"
+
+  web: false
