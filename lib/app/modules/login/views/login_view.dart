@@ -169,7 +169,9 @@ class LoginView extends GetView<LoginController> {
                     SizedBox(
                       height: 50,
                       child: ElevatedButton(
-                        onPressed: () => Get.toNamed(Routes.DASHBOARD),
+                        onPressed: () {
+                          controller.login();
+                        },
                         child: Text(
                           'Sign In',
                           style: TextStyle(fontWeight: FontWeight.bold),

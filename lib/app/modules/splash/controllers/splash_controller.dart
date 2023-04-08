@@ -1,9 +1,13 @@
+import 'dart:async';
+
+import 'package:flutter/animation.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+
+import '../../../routes/app_pages.dart';
 
 class SplashController extends GetxController {
-  //TODO: Implement SplashScreenController
-
-  final count = 0.obs;
+  final getStorge = GetStorage();
   @override
   void onInit() {
     super.onInit();
@@ -12,12 +16,18 @@ class SplashController extends GetxController {
   @override
   void onReady() {
     super.onReady();
+    if (getStorge.read("id") != null) {
+      Future.delayed(const Duration(seconds: 5), () {
+        Get.offAllNamed(Routes.DASHBOARD);
+      });
+    } else {
+
+        Get.offAllNamed(Routes.LOGIN);
+    }
   }
 
   @override
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

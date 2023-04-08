@@ -11,6 +11,8 @@ dependencies:
   flutter_expandable_fab: ^1.7.1
   persistent_header_adaptive: ^2.0.0
   get: 4.6.5
+  get_storage: ^2.0.3
+  line_awesome_flutter: ^2.0.0
   flutter:
     sdk: flutter
   google_fonts: ^2.0.0
