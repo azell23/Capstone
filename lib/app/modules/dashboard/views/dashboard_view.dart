@@ -34,15 +34,21 @@ class DashboardView extends StatelessWidget {
             elevation: 0,
             items: [
               _bottomNavigationBarItem(
-                icon: Icons.home,
+                Icon: ImageIcon(
+                  AssetImage('assets/icons/ic_home.png'),
+                ),
                 label: 'Home',
               ),
               _bottomNavigationBarItem(
-                icon: Icons.food_bank,
+                Icon: ImageIcon(
+                  AssetImage('assets/icons/ic_food.png'),
+                ),
                 label: 'Food',
               ),
               _bottomNavigationBarItem(
-                icon: Icons.person,
+                Icon: ImageIcon(
+                  AssetImage('assets/icons/ic_user.png'),
+                ),
                 label: 'Profile',
               ),
             ],
@@ -52,9 +58,9 @@ class DashboardView extends StatelessWidget {
     );
   }
 
-  _bottomNavigationBarItem({IconData? icon, String? label}) {
+  _bottomNavigationBarItem({Icon, String? label}) {
     return BottomNavigationBarItem(
-      icon: Icon(icon),
+      icon: Icon,
       label: label,
     );
   }
