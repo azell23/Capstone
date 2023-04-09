@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:capstone/theme/color.dart';
 import '../../../routes/app_pages.dart';
 import '../controllers/login_controller.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LoginView extends GetView<LoginController> {
   @override
@@ -235,18 +236,27 @@ class LoginView extends GetView<LoginController> {
                     ),
                     SizedBox(
                       height: 50,
-                      child: ElevatedButton(
+                      child: ElevatedButton.icon(
                         onPressed: () => Get.toNamed(Routes.DASHBOARD),
-                        child: Text(
-                          'Sign In With Google',
+                        icon: Icon(
+                          FontAwesomeIcons.google,
+                          color: Colors.white,
+                          size: 18,
+                        ),
+                        label: Text(
+                          'Sign in with Google',
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, color: Colors.white),
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
                         ),
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: primaryColor,
+                          primary: primaryColor,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0),
                           ),
+                          padding: EdgeInsets.symmetric(horizontal: 30),
                         ),
                       ),
                     ),

@@ -23,21 +23,21 @@ class OnboardingView extends GetView<OnboardingController> {
             // start page onboarding
             OnBoardingWidgets(
               image: 'on_boarding_1.png',
-              title: 'Track Everything',
+              title: 'Track Your Progress',
               subtitle:
-                  'your financial journey start here. We are\nhere to help ypur tracking and handle every\ntransaction 24/day.',
+                  'Stay motivated and track your fitness journey with our easy-to-use tracking feature. Set goals and see your progress in real-time.',
             ),
             OnBoardingWidgets(
               image: 'on_boarding_2.png',
-              title: 'Fast Transaction',
+              title: 'Efficient Workouts',
               subtitle:
-                  'Get easy to pay all yours bills with just a\nfew taps. paying your bill become fast \nand efficient. Enjoy',
+                  'Get customized workout plans that are tailored to your goals and fitness level. Our app provides you with everything you need to make your workouts more efficient.',
             ),
             OnBoardingWidgets(
               image: 'on_boarding_3.png',
-              title: 'Enjoy Everyday!',
+              title: 'Join Our Community',
               subtitle:
-                  'Be wise, and discover your best financial\nexperience with us. Everything is in\nyour hands!',
+                  'Connect with like-minded individuals who share your passion for fitness. Our community is a great way to find motivation, get support, and share your progress.',
             ),
             // end
           ],

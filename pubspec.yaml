@@ -7,6 +7,7 @@ environment:
 
 dependencies:
   cupertino_icons: ^1.0.2
+  font_awesome_flutter: ^9.2.0
   fade_shimmer: ^2.2.0
   smooth_page_indicator: ^1.0.1
   flutter_expandable_fab: ^1.7.1

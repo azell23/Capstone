@@ -9,7 +9,7 @@ class DetailfoodView extends GetView<DetailfoodController> {
   @override
   Widget build(BuildContext context) {
     final mediaQueryHeight = MediaQuery.of(context).size.height;
-    final mediaQueryWidht = MediaQuery.of(context).size.width;
+    final mediaQueryWidth = MediaQuery.of(context).size.width;
     final bodyHeight = mediaQueryHeight - MediaQuery.of(context).padding.top;
     return Scaffold(
       backgroundColor: Color.fromARGB(231, 0, 0, 0),
@@ -50,12 +50,23 @@ class DetailfoodView extends GetView<DetailfoodController> {
                       alignment: Alignment.bottomLeft,
                       child: Padding(
                         padding: const EdgeInsets.all(12.0),
-                        child: Text(
-                          'Ayam',
-                          style: TextStyle(
+                        child: TweenAnimationBuilder<double>(
+                          tween: Tween(begin: 0, end: 1),
+                          duration: Duration(milliseconds: 500),
+                          builder: (context, value, child) {
+                            return Opacity(
+                              opacity: value,
+                              child: child,
+                            );
+                          },
+                          child: Text(
+                            'Ayam',
+                            style: TextStyle(
                               fontSize: 24,
                               fontWeight: FontWeight.bold,
-                              color: Colors.white),
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
                       ),
                     ),
@@ -83,29 +94,140 @@ class DetailfoodView extends GetView<DetailfoodController> {
                       Text(
                         "Ayam",
                         style: TextStyle(
-                            fontSize: 24, fontWeight: FontWeight.bold),
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 16,
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            'Kalori: ',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          TweenAnimationBuilder<int>(
+                            tween: IntTween(begin: 0, end: 120),
+                            duration: Duration(milliseconds: 500),
+                            builder: (context, value, child) {
+                              return Text(
+                                '$value',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.grey[600],
+                                ),
+                              );
+                            },
+                          ),
+                        ],
                       ),
                       SizedBox(
                         height: 8,
                       ),
                       Row(
-                        children: [Text('kalori : '), Text('120')],
+                        children: [
+                          Text(
+                            'Protein: ',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          TweenAnimationBuilder<int>(
+                            tween: IntTween(begin: 0, end: 100),
+                            duration: Duration(milliseconds: 500),
+                            builder: (context, value, child) {
+                              return Text(
+                                '$value g',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.grey[600],
+                                ),
+                              );
+                            },
+                          ),
+                        ],
                       ),
                       SizedBox(
                         height: 8,
                       ),
                       Row(
-                        children: [Text('Protein : '), Text('100')],
+                        children: [
+                          Text(
+                            'Karbohidrat: ',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          TweenAnimationBuilder<int>(
+                            tween: IntTween(begin: 0, end: 50),
+                            duration: Duration(milliseconds: 500),
+                            builder: (context, value, child) {
+                              return Text(
+                                '$value g',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.grey[600],
+                                ),
+                              );
+                            },
+                          ),
+                        ],
                       ),
                       SizedBox(
                         height: 8,
                       ),
                       Row(
-                        children: [Text('Description '), Text('Daging Ayam')],
+                        children: [
+                          Text(
+                            'Lemak: ',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          TweenAnimationBuilder<int>(
+                            tween: IntTween(begin: 0, end: 20),
+                            duration: Duration(milliseconds: 500),
+                            builder: (context, value, child) {
+                              return Text(
+                                '$value g',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.grey[600],
+                                ),
+                              );
+                            },
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 16,
+                      ),
+                      Text(
+                        "Bahan-bahan",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        "Ayam, bawang putih, bawang merah, cabai rawit, garam, gula, kaldu ayam",
+                        style: TextStyle(
+                          fontSize: 16,
+                        ),
                       ),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),

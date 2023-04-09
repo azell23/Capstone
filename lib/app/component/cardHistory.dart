@@ -40,8 +40,7 @@ class CardHistory extends StatelessWidget {
                     size: 40,
                   ),
                   Padding(
-                    padding:
-                        const EdgeInsets.only(top: 10.0),
+                    padding: const EdgeInsets.only(top: 10.0),
                     child: Text(
                       'History',
                       style: TextStyle(
