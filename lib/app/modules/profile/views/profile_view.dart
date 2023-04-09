@@ -11,11 +11,12 @@ class ProfileView extends GetView<ProfileController> {
   const ProfileView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    var isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
+    // var isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
     return Scaffold(
       appBar: AppBar(
         title: Text(tProfile),
         centerTitle: true,
+        backgroundColor: primaryColor,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -61,7 +62,7 @@ class ProfileView extends GetView<ProfileController> {
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: 20),
                       decoration: BoxDecoration(
-                        color: isDark ? Colors.grey[900] : Colors.white,
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
                         boxShadow: [
                           BoxShadow(
@@ -88,7 +89,7 @@ class ProfileView extends GetView<ProfileController> {
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: 20),
                       decoration: BoxDecoration(
-                        color: isDark ? Colors.grey[900] : Colors.white,
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
                         boxShadow: [
                           BoxShadow(
@@ -115,7 +116,7 @@ class ProfileView extends GetView<ProfileController> {
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: 20),
                       decoration: BoxDecoration(
-                        color: isDark ? Colors.grey[900] : Colors.white,
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
                         boxShadow: [
                           BoxShadow(
