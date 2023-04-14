@@ -147,6 +147,7 @@ class RegisterView extends GetView<RegisterController> {
                       height: 15,
                     ),
                     TextField(
+                      obscureText: true,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
                           borderSide: BorderSide(

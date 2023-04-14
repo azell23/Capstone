@@ -100,46 +100,60 @@ class LoginView extends GetView<LoginController> {
                     SizedBox(
                       height: 15.0,
                     ),
-                    TextField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            width: 2,
-                            color: Colors.black45,
-                          ),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            width: 2,
-                            color: Colors.black45,
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            width: 2,
-                            color: Colors.black45,
-                          ),
-                        ),
-                        hintText: "Input your password",
-                        labelText: "Password",
-                        labelStyle: TextStyle(
-                          fontSize: 16,
-                          color: Colors.black45,
-                        ),
-                        floatingLabelBehavior: FloatingLabelBehavior.always,
-                        prefixIcon: Container(
-                          margin: const EdgeInsets.all(16),
-                          padding: const EdgeInsets.only(right: 12),
-                          decoration: BoxDecoration(
-                            border: Border(
-                              right: BorderSide(
-                                color: Colors.black,
-                              ),
+                    Obx(
+                      () => TextField(
+                        obscureText: controller.obscureText.value,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              width: 2,
+                              color: Colors.black45,
                             ),
                           ),
-                          child: Icon(
-                            Icons.lock,
+                          suffixIcon: IconButton(
+                            icon: Icon(
+                              controller.obscureText.value
+                                  ? Icons.visibility
+                                  : Icons.visibility_off,
+                              color: Colors.black45,
+                            ),
+                            onPressed: () {
+                              controller.toglePasswordVisibility();
+                            },
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              width: 2,
+                              color: Colors.black45,
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              width: 2,
+                              color: Colors.black45,
+                            ),
+                          ),
+                          hintText: "Input your password",
+                          labelText: "Password",
+                          labelStyle: TextStyle(
+                            fontSize: 16,
                             color: Colors.black45,
+                          ),
+                          floatingLabelBehavior: FloatingLabelBehavior.always,
+                          prefixIcon: Container(
+                            margin: const EdgeInsets.all(16),
+                            padding: const EdgeInsets.only(right: 12),
+                            decoration: BoxDecoration(
+                              border: Border(
+                                right: BorderSide(
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                            child: Icon(
+                              Icons.lock,
+                              color: Colors.black45,
+                            ),
                           ),
                         ),
                       ),

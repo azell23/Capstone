@@ -4,26 +4,19 @@ import 'package:get_storage/get_storage.dart';
 import '../../../routes/app_pages.dart';
 
 class LoginController extends GetxController {
+  var obscureText = true.obs;
+  var isLoading = false.obs;
+
   final getStorge = GetStorage();
   //TODO: Implement LoginController
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  void toglePasswordVisibility() {
+    obscureText.toggle();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  void setLoading() {
+    isLoading.toggle();
   }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 
   login() {
     getStorge.write("id", 1);

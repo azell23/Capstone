@@ -81,6 +81,7 @@ class ProfileView extends GetView<ProfileController> {
                         ElevatedButton(
                           onPressed: () {
                             // Edit function
+                            
                           },
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
