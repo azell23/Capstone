@@ -4,6 +4,8 @@ import '../modules/dashboard/bindings/dashboard_binding.dart';
 import '../modules/dashboard/views/dashboard_view.dart';
 import '../modules/detailfood/bindings/detailfood_binding.dart';
 import '../modules/detailfood/views/detailfood_view.dart';
+import '../modules/detection/bindings/detection_binding.dart';
+import '../modules/detection/views/detection_view.dart';
 import '../modules/food/bindings/food_binding.dart';
 import '../modules/food/views/food_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -64,6 +66,11 @@ class AppPages {
       name: _Paths.DETAILFOOD,
       page: () => DetailfoodView(),
       binding: DetailfoodBinding(),
+    ),
+    GetPage(
+      name: _Paths.DETECTION,
+      page: () => const DetectionView(),
+      binding: DetectionBinding(),
     ),
   ];
 }
