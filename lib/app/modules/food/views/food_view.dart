@@ -52,10 +52,10 @@ class FoodView extends GetView<FoodController> {
                       physics: NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
                       itemBuilder: (context, index) {
-                        final FoodDetail gas = foodList[index];
+                        final FoodDetail makanan = foodList[index];
                         return InkWell(
                           onTap: () => Get.toNamed(Routes.DETAILFOOD),
-                          child: Card_Gas(food: gas),
+                          child: Card_Food(food: makanan),
                         );
                       },
                       itemCount: foodList.length,
@@ -71,8 +71,8 @@ class FoodView extends GetView<FoodController> {
   }
 }
 
-class Card_Gas extends StatelessWidget {
-  const Card_Gas({
+class Card_Food extends StatelessWidget {
+  const Card_Food({
     super.key,
     required this.food,
   });

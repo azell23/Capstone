@@ -18,11 +18,14 @@ dependencies:
   google_sign_in: ^6.1.0
   get: 4.6.5
   get_storage: ^2.0.3
+  dio: ^4.0.6
+  shimmer: ^2.0.0
+  http: ^0.13.6
   line_awesome_flutter: ^2.0.0
   flutter:
     sdk: flutter
   google_fonts: ^2.0.0
-
+  
 dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_test:
